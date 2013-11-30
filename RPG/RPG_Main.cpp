@@ -29,7 +29,7 @@ int main()
   rand_name.push_back("Toast Crunch");
 
   // NK Edit:  Not a good idea to use timstamps as a random number seed.
-  srand(123456L);
+  srand(time(0));
   int rand_armor;
   rand_armor = rand() & 1 + 100; //Calculating the random health and armor that will be lost
   char i_accept;
