@@ -124,7 +124,19 @@ int main()
 		  cout << "\nWhat would you like to do next?\n";
 		  cout << "\n1)Move  2)View Stats  3)Rest  4)Quit: ";
 		  cin >> next1;
-		  
+
+		  if (next1 == 2){
+		    cout << "\nName:  " << rand_name[0] << endl;
+		    cout << "Class   :  " << class_type << endl;
+		    cout << "Health  :  " << health << endl;
+		    cout << "Armor   :  " << armor << endl;
+		    cout << "XP      :  " << xp << endl;
+		    cout << "Weapon  :  " << weapon;
+		      
+		    cout << "\n\nAfter viewing your stats, you decide to move along.";
+		    next1 = 1;
+		  }
+
 		  while (next1 == 1)
 		    {
 		      cout << "You approach a cabin.\n";
@@ -249,16 +261,16 @@ int main()
 		    }
 		  if (next1 == 2)
 		    {
-		      cout << "\nName:  " << rand_name[0] << endl;
-		      cout << "Class   :  " << class_type << endl;
-		      cout << "Health  :  " << health << endl;
-		      cout << "Armor   :  " << armor << endl;
-		      cout << "XP      :  " << xp << endl;
-		      cout << "Weapon  :  " << weapon;
+		      // cout << "\nName:  " << rand_name[0] << endl;
+		      // cout << "Class   :  " << class_type << endl;
+		      // cout << "Health  :  " << health << endl;
+		      // cout << "Armor   :  " << armor << endl;
+		      // cout << "XP      :  " << xp << endl;
+		      // cout << "Weapon  :  " << weapon;
 		      
-		      cout << "\n\nAfter viewing your stats, you decide to move along.";
-		      next1 = 1;
-		      continue;
+		      // cout << "\n\nAfter viewing your stats, you decide to move along.";
+		      // next1 = 1;
+		      // continue;
 		    }
 		  else if(next1 == 3)
 		    {
