@@ -29,7 +29,7 @@ int main()
   rand_name.push_back("Toast Crunch");
 
   // NK Edit:  Not a good idea to use timstamps as a random number seed.
-  srand(123456L);
+  srand(time(0));
   int rand_armor;
   rand_armor = rand() & 1 + 100; //Calculating the random health and armor that will be lost
   char i_accept;
@@ -90,6 +90,20 @@ int main()
 	  cout << "What would you like to do next?" << endl;
 	  cout << "\n1)Move  2)View Stats  3)Rest  4)Quit: ";
 	  cin >> next;
+	  
+  	  if (next == 2)
+	  {
+		cout << "\nName:  " << rand_name[0] << endl; //Stats gather information from user input
+		cout << "Class   :  " << class_type << endl;
+		cout << "Health  :  " << health << endl;
+		cout << "Armor   :  " << armor << endl;
+		cout << "XP      :  " << xp << endl;
+		cout << "Weapon  :  " << weapon;
+		    
+		cout << "After viewing your stats, you decide to move along.\n"  
+		next = 1;
+		continue;
+	   }
 
 	  while (next == 1)
 	    {
@@ -125,9 +139,33 @@ int main()
 		  cout << "\n1)Move  2)View Stats  3)Rest  4)Quit: ";
 		  cin >> next1;
 		  
+		  if (next1 == 2)
+		    {
+		      cout << "\nName:  " << rand_name[0] << endl;
+		      cout << "Class   :  " << class_type << endl;
+		      cout << "Health  :  " << health << endl;
+		      cout << "Armor   :  " << armor << endl;
+		      cout << "XP      :  " << xp << endl;
+		      cout << "Weapon  :  " << weapon;
+		      
+		      cout << "\n\nAfter viewing your stats, you decide to move along.";
+		      next1 = 1;
+		      continue;
+		    }
+		    
+		  else if(next1 == 3)
+		    {
+		      cout << "Your health is back to 100.";
+		      health = 100;
+		      next1 = 1;
+		    }
+
+
 		  while (next1 == 1)
 		    {
 		      cout << "You approach a cabin.\n";
+		      cout << "The journey was long, you have lost 50 health.\n";
+		      health - 50;
 		      cout << "You knock on the door.\n";
 		      cout << "A man opens the door and says,\n";
 		      cout << "Hello weary traveler, would you like to accept a gift?\n\n";
@@ -147,8 +185,28 @@ int main()
 		      cout << "\nWhat would you like to do next?";
 		      cout << "\n1)Move  2)View Stats  3)Rest  4)Quit: ";
 		      cin >> next2;
+		      
+		      if (next2 == 2)
+			{
+			  cout << "\nName:  " << rand_name[0] << endl;
+			  cout << "Class   :  " << class_type << endl;
+			  cout << "Health  :  " << health << endl;
+			  cout << "Armor   :  " << armor << endl;
+			  cout << "XP      :  " << xp << endl;
+			  cout << "Weapon  :  " << weapon;
+			  
+			  cout << "\n\nAfter viewing your stats, you decide to move along.\n";
+			  next2 = 1;
+			  continue;
+			}
+		      else if (next2 == 3)
+		        {
+		          cout << "You have gained 25 health points.\n"
+		          health + 25;
+		          next2 = 1;
+		        }
 
-		      if (next2 == 1)
+		      else if (next2 == 1)
 			{
 			  cout << "\nYou continue on and find your final destination.\n";
 			  cout << "It is a large warehouse. You approach the door.\n";
@@ -202,7 +260,18 @@ int main()
 				    {
 				      cout << "You shoot it one more time in the head.\n";
 				      cout << "It dies. You have won!\n\n";
-				      cout << "Would you like to play again?(y/n)";
+				      cout << "+ 1000 XP\n"
+				      xp + 1000;
+				      cout << "Your stats: \n\n"
+				      
+				      cout << "\nName:  " << rand_name[0] << endl;
+				      cout << "Class   :  " << class_type << endl;
+				      cout << "Health  :  " << health << endl;
+				      cout << "Armor   :  " << armor << endl;
+				      cout << "XP      :  " << xp << endl;
+				      cout << "Weapon  :  " << weapon;
+
+				      cout << "\n\nWould you like to play again?(y/n)";
 				      cin >> i_accept;
 				      break;
 				    }
@@ -210,7 +279,18 @@ int main()
 				    {
 				      cout << "You swing your chainsaw at the beast, chopping off its head.\n";
 				      cout << "It dies. You have won!\n\n";
-				      cout << "Would you like to play again?(y/n)";
+				      cout << "+ 1000 XP\n"
+				      xp + 1000;
+				      cout << "Your stats: \n\n"
+				      
+				      cout << "\nName:  " << rand_name[0] << endl;
+				      cout << "Class   :  " << class_type << endl;
+				      cout << "Health  :  " << health << endl;
+				      cout << "Armor   :  " << armor << endl;
+				      cout << "XP      :  " << xp << endl;
+				      cout << "Weapon  :  " << weapon;
+
+				      cout << "\nWould you like to play again?(y/n)";
 				      cin >> i_accept;
 				      break;
 				    }
@@ -234,38 +314,8 @@ int main()
 			      cin >> i_accept;
 			    }
 			}
-		      if (next2 == 2)
-			{
-			  cout << "\nName:  " << rand_name[0] << endl;
-			  cout << "Class   :  " << class_type << endl;
-			  cout << "Health  :  " << health << endl;
-			  cout << "Armor   :  " << armor << endl;
-			  cout << "XP      :  " << xp << endl;
-			  cout << "Weapon  :  " << weapon;
-			  
-			  cout << "\n\nAfter viewing your stats, you decide to move along.\n";
-			  next2 = 1;
-			}
 		    }
-		  if (next1 == 2)
-		    {
-		      cout << "\nName:  " << rand_name[0] << endl;
-		      cout << "Class   :  " << class_type << endl;
-		      cout << "Health  :  " << health << endl;
-		      cout << "Armor   :  " << armor << endl;
-		      cout << "XP      :  " << xp << endl;
-		      cout << "Weapon  :  " << weapon;
-		      
-		      cout << "\n\nAfter viewing your stats, you decide to move along.";
-		      next1 = 1;
-		      continue;
-		    }
-		  else if(next1 == 3)
-		    {
-		      cout << "Your health is back to 100.";
-		      health = 100;
-		      next1 = 1;
-		    }
+		    
 		}
 
 	      
@@ -286,19 +336,7 @@ int main()
 		}
 
 	    }
-	  if (next == 2)
-	    {
-	      cout << "\nName:  " << rand_name[0] << endl; //Stats gather information from user input
-	      cout << "Class   :  " << class_type << endl;
-	      cout << "Health  :  " << health << endl;
-	      cout << "Armor   :  " << armor << endl;
-	      cout << "XP      :  " << xp << endl;
-	      cout << "Weapon  :  " << weapon;
-	      
-	      next = 1;
-	      continue;
-
-	    }
+	    
 	  else if (next == 3)
 	    {
 	      cout << "'THERE'S NO TIME FOR REST. GET MOVING!'";
