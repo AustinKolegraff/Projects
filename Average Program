@@ -1,0 +1,48 @@
+//Averaging Program
+//Austin Kolegraff
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int division(int,int);
+float division(float,int);
+
+int main()
+{
+	int size = 0;  
+	cout << "How many numbers would you like to average? (2 - 10): "; //Array size
+	cin >> size;
+	while (size < 2, size > 10)
+	{
+		cout << "Please enter a number between 2 and 10: ";
+		cin >> size;
+	}
+	int f_size = size;
+	int array[10];   //10 Because max array size is 10
+	float f_sum = 0;  
+	int sum = 0;
+	for(int i = 1; i <= size; i++)   //For loop obtains information from size input
+	{
+		cout << "Enter a number: ";
+		cin >> array[i]; //
+		f_sum = f_sum + array[i];
+		sum = sum + array[i];
+	}
+
+	cout << "Average: " << division(size, sum) << endl; //Division function called to find average
+	cout << "Float Average: " <<division(f_size, f_sum);
+
+	int pause;
+	cin >> pause;
+	return 0;
+}
+int division(int sum, int size)
+{
+    return sum / size;
+}
+float division(float f_sum, int f_size)
+{
+	return f_sum / f_size;
+}
